@@ -31,17 +31,19 @@ See each package README for markup + API. Agents and tools: start with [AGENTS.m
 
 ## Demos (thousands of JSON items)
 
-| Demo | Data | Path |
-|------|------|------|
-| Coverflow | [`people-2500.json`](./examples/data/people-2500.json) | [`examples/coverflow/`](./examples/coverflow/) |
-| Z-Timeline | [`events-5000.json`](./examples/data/events-5000.json) | [`examples/z-timeline/`](./examples/z-timeline/) |
+**Live:** [kohlercode.github.io/voltilt](https://kohlercode.github.io/voltilt/)
+
+| Demo | Data | Live | Source |
+|------|------|------|--------|
+| Coverflow | [`people-2500.json`](./examples/data/people-2500.json) | [Open](https://kohlercode.github.io/voltilt/examples/coverflow/) | [`examples/coverflow/`](./examples/coverflow/) |
+| Z-Timeline | [`events-5000.json`](./examples/data/events-5000.json) | [Open](https://kohlercode.github.io/voltilt/examples/z-timeline/) | [`examples/z-timeline/`](./examples/z-timeline/) |
 
 ```bash
 npm install
 npm run demo
 ```
 
-Then open the local server root shown in the terminal (default port **4173**) and pick a demo from the hub page. Serve the **repo root** so demos can import package sources and shared JSON.
+For local runs, open the server URL printed in the terminal (default port **4173**) and pick a demo from the hub page. Serve the **repo root** so demos can import package sources and shared JSON.
 
 Regenerate fixtures: `npm run generate:data`
 
