@@ -27,7 +27,7 @@ import { createZTimeline, createArraySource } from '@voltilt/z-timeline';
 import '@voltilt/z-timeline/style.css';
 ```
 
-See each package README for markup + API. Agents and tools: start with [AGENTS.md](./AGENTS.md).
+See each package README for markup + API. Agents and tools: start with [AGENTS.md](./AGENTS.md). Releases: [CHANGELOG.md](./CHANGELOG.md).
 
 ## Demos (thousands of JSON items)
 

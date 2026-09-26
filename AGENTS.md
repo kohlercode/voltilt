@@ -53,6 +53,28 @@ Import sources in demos via relative paths into `packages/*/src` (no bundler req
 - Do not add framework wrappers until vanilla APIs are solid
 - Do not invent ad-hoc animation libs; stick to CSS 3D + rAF
 
+## Versioning & releases
+
+**Practice:** SemVer in each package ↔ matching **GitHub Release / git tag** ↔ **npm publish**. Keep those three aligned for every ship.
+
+| Channel | Rule |
+|---------|------|
+| `packages/*/package.json` `"version"` | Source of truth for that package |
+| Git tag / GitHub Release | Same version (`vX.Y.Z` when shipping together, or package-specific tags if independent) |
+| npm | `npm publish --access public` at that exact version |
+
+### Bumps (agents must apply in the same change set)
+
+| Change | Version |
+|--------|---------|
+| Fix / perf / docs in a package | **patch** |
+| Backward-compatible feature / API | **minor** |
+| Breaking API or CSS contract | **major** |
+
+Bump **only packages that changed**. Update [`CHANGELOG.md`](./CHANGELOG.md) in the same commit. Propose a **ship** (tag + GitHub Release + npm) when the user wants it public; do not leave publishable package edits unversioned.
+
+Root workspace package stays private (not on npm).
+
 ## Public-repo security (mandatory)
 
 This repository is **public**. Never commit:
@@ -70,4 +92,3 @@ If a change would require a secret, use env vars documented as placeholders only
 ## Out of scope
 
 - Private KohlerCode application backends (Voltilt is the extracted UI kit only)
-- Publishing to npm (manual; ensure no local-only files in `files` field)
