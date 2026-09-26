@@ -46,6 +46,29 @@ import '@voltilt/z-timeline/style.css';
 
 See each package README for markup + API. Agents and tools: start with [AGENTS.md](./AGENTS.md). Releases: [CHANGELOG.md](./CHANGELOG.md).
 
+## CDN (jsDelivr)
+
+Packages on npm are mirrored for free. Prefer a **pinned version** (not `@latest`) in production.
+
+| Package | jsDelivr | ESM | CSS |
+|---------|----------|-----|-----|
+| `@voltilt/coverflow` | [Package page](https://www.jsdelivr.com/package/npm/@voltilt/coverflow) | [`/+esm`](https://cdn.jsdelivr.net/npm/@voltilt/coverflow@0.1.0/+esm) | [`style.css`](https://cdn.jsdelivr.net/npm/@voltilt/coverflow@0.1.0/src/style.css) |
+| `@voltilt/z-timeline` | [Package page](https://www.jsdelivr.com/package/npm/@voltilt/z-timeline) | [`/+esm`](https://cdn.jsdelivr.net/npm/@voltilt/z-timeline@0.1.0/+esm) | [`style.css`](https://cdn.jsdelivr.net/npm/@voltilt/z-timeline@0.1.0/src/style.css) |
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@voltilt/coverflow@0.1.0/src/style.css" />
+<script type="module">
+  import { createCoverflow } from 'https://cdn.jsdelivr.net/npm/@voltilt/coverflow@0.1.0/+esm';
+</script>
+```
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@voltilt/z-timeline@0.1.0/src/style.css" />
+<script type="module">
+  import { createZTimeline, createArraySource } from 'https://cdn.jsdelivr.net/npm/@voltilt/z-timeline@0.1.0/+esm';
+</script>
+```
+
 ## Demos (thousands of JSON items)
 
 **Live:** [kohlercode.github.io/voltilt](https://kohlercode.github.io/voltilt/)

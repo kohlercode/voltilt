@@ -13,6 +13,17 @@ import { createCoverflow } from '@voltilt/coverflow';
 import '@voltilt/coverflow/style.css';
 ```
 
+### CDN (jsDelivr)
+
+[Package page](https://www.jsdelivr.com/package/npm/@voltilt/coverflow) · pin a version in production:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@voltilt/coverflow@0.1.0/src/style.css" />
+<script type="module">
+  import { createCoverflow } from 'https://cdn.jsdelivr.net/npm/@voltilt/coverflow@0.1.0/+esm';
+</script>
+```
+
 ## Markup
 
 Use a root with `data-vt-*` hooks (or pass `elements` refs):

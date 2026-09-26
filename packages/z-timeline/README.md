@@ -13,6 +13,17 @@ import { createZTimeline, createArraySource } from '@voltilt/z-timeline';
 import '@voltilt/z-timeline/style.css';
 ```
 
+### CDN (jsDelivr)
+
+[Package page](https://www.jsdelivr.com/package/npm/@voltilt/z-timeline) · pin a version in production:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@voltilt/z-timeline@0.1.0/src/style.css" />
+<script type="module">
+  import { createZTimeline, createArraySource } from 'https://cdn.jsdelivr.net/npm/@voltilt/z-timeline@0.1.0/+esm';
+</script>
+```
+
 ## Markup
 
 ```html
