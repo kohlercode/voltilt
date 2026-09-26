@@ -1,0 +1,159 @@
+/* @voltilt/z-timeline — viewport, scene, 16:9 cards */
+
+.vt-z-root {
+  --vt-bg: #0b0f1a;
+  --vt-surface: #141928;
+  --vt-text: #e8ecf8;
+  --vt-muted: #8b95b0;
+  --vt-accent: #6d8dff;
+  --vt-accent-soft: rgba(109, 141, 255, 0.16);
+  --vt-gold: #ffcf6d;
+  --vt-border: rgba(255, 255, 255, 0.16);
+  --vt-perspective: 1100px;
+}
+
+.vt-z-scroll-proxy {
+  width: 1px;
+  height: 0;
+  pointer-events: none;
+}
+
+.vt-z-viewport {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  perspective: var(--vt-perspective);
+  overflow: hidden;
+  background: var(--vt-bg);
+  color: var(--vt-text);
+}
+
+.vt-z-scene-wrapper {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.vt-z-scene {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.vt-z-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(78vw, 720px);
+  aspect-ratio: 16 / 9;
+  background: var(--vt-surface);
+  border: 1px solid var(--vt-border);
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  padding: 0;
+}
+
+.vt-z-glare {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.28) 0%,
+    rgba(255, 255, 255, 0.06) 28%,
+    transparent 55%
+  );
+  opacity: 0.35;
+  pointer-events: none;
+  will-change: transform;
+  z-index: 1;
+}
+
+.vt-z-card-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  min-height: 0;
+  padding: clamp(18px, 3.4vw, 42px);
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.vt-z-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.82rem;
+  color: var(--vt-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+
+.vt-z-card-type {
+  background: var(--vt-accent-soft);
+  color: #b9c8ff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.vt-z-card-date {
+  margin-left: auto;
+}
+
+.vt-z-card-content h2 {
+  font-size: clamp(1.3rem, 3.2vw, 2.2rem);
+  font-weight: 700;
+  margin: 14px 0 8px;
+  line-height: 1.15;
+  flex-shrink: 0;
+}
+
+.vt-z-card-desc {
+  color: #c3cbd9;
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  line-height: 1.5;
+  margin: 0;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.vt-z-empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--vt-muted);
+  z-index: 5;
+}
+
+.vt-hidden {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vt-z-scene-wrapper,
+  .vt-z-scene,
+  .vt-z-glare {
+    will-change: auto;
+  }
+}

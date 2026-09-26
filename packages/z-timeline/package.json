@@ -1,0 +1,39 @@
+{
+  "name": "@voltilt/z-timeline",
+  "version": "0.1.0",
+  "description": "Virtualized Z-axis scroll timeline — vanilla JS + CSS 3D",
+  "type": "module",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./style.css": "./src/style.css"
+  },
+  "files": [
+    "src"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "keywords": [
+    "timeline",
+    "virtualization",
+    "css-3d",
+    "scroll",
+    "voltilt"
+  ],
+  "author": {
+    "name": "KohlerCode",
+    "url": "https://kohlercode.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kohlercode/voltilt.git",
+    "directory": "packages/z-timeline"
+  },
+  "bugs": {
+    "url": "https://github.com/kohlercode/voltilt/issues"
+  },
+  "homepage": "https://github.com/kohlercode/voltilt/tree/main/packages/z-timeline#readme"
+}

@@ -1,0 +1,41 @@
+{
+  "name": "voltilt",
+  "private": true,
+  "version": "0.1.0",
+  "description": "High-performance CSS-3D navigation primitives for the web",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "demo": "npx --yes serve . -l 4173",
+    "demo:coverflow": "npx --yes serve . -l 4173",
+    "demo:timeline": "npx --yes serve . -l 4173",
+    "generate:data": "node scripts/generate-demo-data.js"
+  },
+  "keywords": [
+    "css-3d",
+    "coverflow",
+    "timeline",
+    "scroll",
+    "virtualization",
+    "vanilla-js"
+  ],
+  "author": {
+    "name": "KohlerCode",
+    "url": "https://kohlercode.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/kohlercode/voltilt",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kohlercode/voltilt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kohlercode/voltilt/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

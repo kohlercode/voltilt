@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Voltilt Z-Timeline — 5000 items</title>
+  <link rel="stylesheet" href="../../packages/z-timeline/src/style.css" />
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: #070a12;
+      color: #e8ecf8;
+    }
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 40;
+      padding: 16px 24px;
+      display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+      background: linear-gradient(to bottom, rgba(7,10,18,0.92), transparent);
+      pointer-events: none;
+    }
+    header h1 { margin: 0; font-size: 1.15rem; font-weight: 700; }
+    header p { margin: 0; font-size: 0.85rem; color: #8b95b0; }
+    #hud {
+      position: fixed; top: 52px; left: 24px; z-index: 40;
+      font-size: 0.8rem; color: #8b95b0;
+      background: rgba(12,16,28,0.75);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 8px 12px;
+      pointer-events: none;
+    }
+    #jump {
+      position: fixed; top: 16px; right: 24px; z-index: 40;
+      display: flex; gap: 8px; pointer-events: auto;
+    }
+    #jump button {
+      border: 0; border-radius: 8px; padding: 8px 12px;
+      background: rgba(109,141,255,0.2); color: #e8ecf8; cursor: pointer;
+      font: inherit; font-size: 0.8rem;
+    }
+    #jump button:hover { background: rgba(109,141,255,0.35); }
+    .loading {
+      position: fixed; inset: 0; display: grid; place-items: center;
+      z-index: 50; color: #8b95b0; background: #070a12;
+    }
+  </style>
+</head>
+<body>
+  <div id="loading" class="loading">Loading events-5000.json…</div>
+
+  <header>
+    <h1>Voltilt</h1>
+    <p>@voltilt/z-timeline · 5,000 cards from JSON · <a href="https://kohlercode.com" target="_blank" rel="noopener" style="color:#9aa8d9;pointer-events:auto">KohlerCode</a></p>
+  </header>
+  <div id="hud">Scroll to fly through Z-space</div>
+  <div id="jump">
+    <button type="button" data-jump="0">Start</button>
+    <button type="button" data-jump="2500">Mid</button>
+    <button type="button" data-jump="4999">End</button>
+  </div>
+
+  <div class="vt-z-root" id="root">
+    <div class="vt-z-scroll-proxy" data-vt-scroll-proxy></div>
+    <div class="vt-z-viewport" data-vt-viewport>
+      <div class="vt-z-scene-wrapper" data-vt-scene-wrapper>
+        <div class="vt-z-scene" data-vt-scene></div>
+      </div>
+      <div class="vt-z-empty vt-hidden" data-vt-empty><p>No events</p></div>
+    </div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

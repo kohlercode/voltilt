@@ -1,0 +1,30 @@
+node_modules/
+dist/
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+.idea/
+.vscode/
+*.tgz
+.turbo/
+coverage/
+.cache/
+
+# Local Cursor / agent config — never commit
+.cursor/
+
+# Secrets & local env (public repo)
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.key
+credentials.json
+config.local.*
+secrets.*
+
+# OS / editor junk
+*.swp
+*~

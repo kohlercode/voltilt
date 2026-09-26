@@ -1,0 +1,9 @@
+{
+  "name": "@voltilt/example-coverflow",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "dependencies": {
+    "@voltilt/coverflow": "*"
+  }
+}

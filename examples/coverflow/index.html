@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Voltilt Coverflow — 2500 items</title>
+  <link rel="stylesheet" href="../../packages/coverflow/src/style.css" />
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; height: 100%;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: #070a12; color: #e8ecf8;
+    }
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 40;
+      padding: 18px 24px; display: flex; align-items: baseline; gap: 14px;
+      pointer-events: none;
+    }
+    header h1 { margin: 0; font-size: 1.15rem; font-weight: 700; }
+    header p { margin: 0; font-size: 0.85rem; color: #8b95b0; }
+    #status {
+      position: fixed; top: 18px; right: 24px; z-index: 40;
+      font-size: 0.8rem; color: #8b95b0;
+    }
+    #app { position: fixed; inset: 0; padding-top: 48px; }
+    .toast {
+      position: fixed; top: 64px; right: 20px; z-index: 50;
+      padding: 10px 14px; border-radius: 10px;
+      background: rgba(20, 28, 48, 0.92);
+      border: 1px solid rgba(109, 141, 255, 0.35);
+      font-size: 0.85rem; opacity: 0; transform: translateY(-6px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      pointer-events: none;
+    }
+    .toast.is-on { opacity: 1; transform: translateY(0); }
+    .loading {
+      position: fixed; inset: 0; display: grid; place-items: center;
+      z-index: 30; color: #8b95b0; background: #070a12;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Voltilt</h1>
+    <p>@voltilt/coverflow · 2,500 cards from JSON · <a href="https://kohlercode.com" target="_blank" rel="noopener" style="color:#9aa8d9;pointer-events:auto">KohlerCode</a></p>
+  </header>
+  <div id="status">Loading…</div>
+  <div id="toast" class="toast" role="status"></div>
+  <div id="loading" class="loading">Loading people-2500.json…</div>
+
+  <div id="app" class="vt-coverflow" data-vt-viewport>
+    <div class="vt-coverflow-ambient" aria-hidden="true"></div>
+    <div class="vt-coverflow-wrap" data-vt-wrap>
+      <div class="vt-coverflow-scene" data-vt-scene></div>
+    </div>
+    <div class="vt-coverflow-chrome" data-vt-chrome>
+      <button type="button" class="vt-nav" data-vt-prev aria-label="Previous">‹</button>
+      <div class="vt-coverflow-status">
+        <span data-vt-label class="vt-coverflow-label"></span>
+        <span data-vt-meta class="vt-coverflow-meta"></span>
+      </div>
+      <button type="button" class="vt-nav" data-vt-next aria-label="Next">›</button>
+    </div>
+    <p class="vt-coverflow-hint">Drag · ← → · only nearby cards stay mounted</p>
+    <div class="vt-empty vt-hidden" data-vt-empty><p></p></div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
