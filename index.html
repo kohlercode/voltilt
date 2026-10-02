@@ -34,6 +34,10 @@
   <meta name="twitter:image:alt" content="Voltilt coverflow demo: a row of 3D cards with the centre card in focus on a dark background" />
 
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/voltilt/sitemap.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -119,43 +123,196 @@
   </script>
 
   <style>
+    :root {
+      --bg: #070a12;
+      --bg-2: #0d1220;
+      --text: #e8ecf8;
+      --muted: #9aa3bd;
+      --accent: #7b93ff;
+      --line: rgba(255, 255, 255, 0.12);
+      --font-display: "Syne", sans-serif;
+      --font-body: "Manrope", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+    }
+
     body {
-      margin: 0; min-height: 100vh; display: grid; place-items: center;
-      font-family: "Segoe UI", system-ui, sans-serif;
-      background: #070a12; color: #e8ecf8;
+      background:
+        radial-gradient(ellipse 90% 55% at 50% -10%, rgba(70, 96, 180, 0.22), transparent 60%),
+        radial-gradient(ellipse 60% 40% at 100% 30%, rgba(30, 48, 90, 0.35), transparent 55%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
     }
-    main { max-width: 420px; padding: 32px; }
-    h1 { margin: 0 0 8px; font-size: 1.6rem; }
-    p { color: #8b95b0; margin: 0 0 24px; }
-    a {
-      display: block; padding: 14px 16px; margin-bottom: 10px;
-      border-radius: 12px; text-decoration: none; color: inherit;
-      background: #151b2c; border: 1px solid rgba(255,255,255,0.1);
+
+    .hero {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
     }
-    a:hover { border-color: rgba(109,141,255,0.5); }
-    a span { display: block; font-size: 0.8rem; color: #8b95b0; margin-top: 4px; }
-    .by { margin-top: 28px; font-size: 0.8rem; color: #6b738a; }
-    a.inline { display: inline; padding: 0; margin: 0; background: none; border: 0; color: #9aa8d9; text-decoration: underline; text-underline-offset: 3px; }
-    a.inline:hover { border: 0; color: #c5d0ff; }
+
+    .hero-copy {
+      width: min(720px, 100%);
+      margin: 0 auto;
+      padding: clamp(28px, 5vw, 48px) clamp(20px, 4vw, 40px) 28px;
+      text-align: center;
+      animation: rise 0.7s ease both;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(2.8rem, 9vw, 4.75rem);
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+    }
+
+    .lead {
+      margin: 0 auto 28px;
+      max-width: 34rem;
+      font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+      line-height: 1.5;
+      color: var(--muted);
+      font-weight: 500;
+      animation: rise 0.7s ease 0.08s both;
+    }
+
+    .cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      justify-content: center;
+      align-items: center;
+      animation: rise 0.7s ease 0.16s both;
+    }
+
+    .cta a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .cta a.primary {
+      padding: 12px 18px;
+      border: 1px solid var(--line);
+      background: rgba(123, 147, 255, 0.14);
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    }
+
+    .cta a.primary:hover,
+    .cta a.primary:focus-visible {
+      border-color: rgba(123, 147, 255, 0.55);
+      background: rgba(123, 147, 255, 0.22);
+      transform: translateY(-1px);
+    }
+
+    .cta a.secondary {
+      color: var(--accent);
+      text-underline-offset: 3px;
+    }
+
+    .cta a.secondary:hover,
+    .cta a.secondary:focus-visible {
+      text-decoration: underline;
+    }
+
+    .hero-visual {
+      flex: 1;
+      display: flex;
+      align-items: stretch;
+      min-height: min(48vh, 420px);
+      animation: fade 1s ease 0.2s both;
+    }
+
+    .hero-visual img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-top: 1px solid var(--line);
+    }
+
+    footer {
+      padding: 22px clamp(20px, 4vw, 40px) 28px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6b738a;
+      border-top: 1px solid var(--line);
+    }
+
+    footer a {
+      color: #9aa8d9;
+      text-decoration: none;
+      text-underline-offset: 3px;
+    }
+
+    footer a:hover,
+    footer a:focus-visible {
+      color: #c5d0ff;
+      text-decoration: underline;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-copy,
+      .lead,
+      .cta,
+      .hero-visual {
+        animation: none;
+      }
+      .cta a.primary:hover {
+        transform: none;
+      }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Voltilt</h1>
-    <p>High-performance CSS-3D navigation demos</p>
-    <a href="examples/coverflow/">
-      Coverflow
-      <span>2,500 cards from JSON · windowed DOM</span>
-    </a>
-    <a href="examples/z-timeline/">
-      Z-Timeline
-      <span>5,000 cards from JSON · virtualized scroll</span>
-    </a>
-    <p class="by">
-      <a class="inline" href="https://github.com/kohlercode/voltilt">GitHub</a>
-      ·
-      A <a class="inline" href="https://kohlercode.com" target="_blank" rel="noopener">KohlerCode</a> project
-    </p>
+  <main class="hero">
+    <div class="hero-copy">
+      <h1>Voltilt</h1>
+      <p class="lead">
+        Finger-follow coverflows and virtualized Z-timelines in vanilla JS and CSS&nbsp;3D — smooth with thousands of cards, no Three.js or GSAP.
+      </p>
+      <div class="cta">
+        <a class="primary" href="examples/coverflow/">Open Coverflow</a>
+        <a class="primary" href="examples/z-timeline/">Open Z-Timeline</a>
+        <a class="secondary" href="https://github.com/kohlercode/voltilt">GitHub</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img
+        src="media/voltilt-coverflow.gif"
+        alt="Voltilt coverflow demo: cards rotating through focus in CSS 3D"
+        width="1280"
+        height="720"
+        decoding="async"
+        fetchpriority="high"
+      />
+    </div>
   </main>
+  <footer>
+    <a href="https://github.com/kohlercode/voltilt">GitHub</a>
+    ·
+    A <a href="https://kohlercode.com" target="_blank" rel="noopener">KohlerCode</a> project
+  </footer>
 </body>
 </html>
