@@ -95,18 +95,36 @@
     }
     header {
       position: fixed; top: 0; left: 0; right: 0; z-index: 40;
-      padding: 18px 24px; display: flex; align-items: baseline; gap: 14px;
-      pointer-events: none;
+      padding: 14px 24px 20px;
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 16px; flex-wrap: wrap;
+      background: linear-gradient(to bottom, rgba(7, 10, 18, 0.96) 55%, transparent);
     }
     header h1 { margin: 0; font-size: 1.15rem; font-weight: 700; }
-    header p { margin: 0; font-size: 0.85rem; color: #8b95b0; }
-    #status {
-      position: fixed; top: 18px; right: 24px; z-index: 40;
-      font-size: 0.8rem; color: #8b95b0;
+    header .demo-meta { margin: 0; font-size: 0.85rem; color: #8b95b0; }
+    header nav {
+      display: flex; align-items: center; gap: 14px;
+      font-size: 0.85rem;
     }
-    #app { position: fixed; inset: 0; padding-top: 48px; }
+    header a {
+      color: #9aa8d9;
+      text-decoration: none;
+    }
+    header a:hover,
+    header a:focus-visible {
+      color: #c5d0ff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    #status {
+      position: fixed; top: 48px; left: 24px; right: 24px; z-index: 40;
+      font-size: 0.8rem; color: #8b95b0;
+      pointer-events: none;
+    }
+    /* Keep the drag surface below the header so brand/nav stay clickable */
+    #app { position: fixed; top: 72px; left: 0; right: 0; bottom: 0; }
     .toast {
-      position: fixed; top: 64px; right: 20px; z-index: 50;
+      position: fixed; top: 96px; right: 20px; z-index: 50;
       padding: 10px 14px; border-radius: 10px;
       background: rgba(20, 28, 48, 0.92);
       border: 1px solid rgba(109, 141, 255, 0.35);
@@ -123,8 +141,15 @@
 </head>
 <body>
   <header>
-    <h1>Voltilt</h1>
-    <p>@voltilt/coverflow · 2,500 cards from JSON · <a href="https://kohlercode.com" target="_blank" rel="noopener" style="color:#9aa8d9;pointer-events:auto">KohlerCode</a></p>
+    <div>
+      <h1>Voltilt</h1>
+      <p class="demo-meta">@voltilt/coverflow · 2,500 cards from JSON</p>
+    </div>
+    <nav aria-label="Demo links">
+      <a href="https://github.com/kohlercode/voltilt">GitHub</a>
+      <a href="../../">Demos</a>
+      <a href="https://kohlercode.com" target="_blank" rel="noopener">KohlerCode</a>
+    </nav>
   </header>
   <div id="status">Loading…</div>
   <div id="toast" class="toast" role="status"></div>

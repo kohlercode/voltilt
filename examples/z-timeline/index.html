@@ -96,15 +96,29 @@
     }
     header {
       position: fixed; top: 0; left: 0; right: 0; z-index: 40;
-      padding: 16px 24px;
-      display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
-      background: linear-gradient(to bottom, rgba(7,10,18,0.92), transparent);
-      pointer-events: none;
+      padding: 14px 24px 20px;
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 16px; flex-wrap: wrap;
+      background: linear-gradient(to bottom, rgba(7, 10, 18, 0.96) 55%, transparent);
     }
     header h1 { margin: 0; font-size: 1.15rem; font-weight: 700; }
-    header p { margin: 0; font-size: 0.85rem; color: #8b95b0; }
+    header .demo-meta { margin: 0; font-size: 0.85rem; color: #8b95b0; }
+    header nav {
+      display: flex; align-items: center; gap: 14px;
+      font-size: 0.85rem;
+    }
+    header a {
+      color: #9aa8d9;
+      text-decoration: none;
+    }
+    header a:hover,
+    header a:focus-visible {
+      color: #c5d0ff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
     #hud {
-      position: fixed; top: 52px; left: 24px; z-index: 40;
+      position: fixed; top: 72px; left: 24px; z-index: 40;
       font-size: 0.8rem; color: #8b95b0;
       background: rgba(12,16,28,0.75);
       border: 1px solid rgba(255,255,255,0.08);
@@ -113,8 +127,8 @@
       pointer-events: none;
     }
     #jump {
-      position: fixed; top: 16px; right: 24px; z-index: 40;
-      display: flex; gap: 8px; pointer-events: auto;
+      position: fixed; top: 72px; right: 24px; z-index: 41;
+      display: flex; gap: 8px;
     }
     #jump button {
       border: 0; border-radius: 8px; padding: 8px 12px;
@@ -132,8 +146,15 @@
   <div id="loading" class="loading">Loading events-5000.json…</div>
 
   <header>
-    <h1>Voltilt</h1>
-    <p>@voltilt/z-timeline · 5,000 cards from JSON · <a href="https://kohlercode.com" target="_blank" rel="noopener" style="color:#9aa8d9;pointer-events:auto">KohlerCode</a></p>
+    <div>
+      <h1>Voltilt</h1>
+      <p class="demo-meta">@voltilt/z-timeline · 5,000 cards from JSON</p>
+    </div>
+    <nav aria-label="Demo links">
+      <a href="https://github.com/kohlercode/voltilt">GitHub</a>
+      <a href="../../">Demos</a>
+      <a href="https://kohlercode.com" target="_blank" rel="noopener">KohlerCode</a>
+    </nav>
   </header>
   <div id="hud">Scroll to fly through Z-space</div>
   <div id="jump">
