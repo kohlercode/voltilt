@@ -18,9 +18,9 @@ import '@voltilt/z-timeline/style.css';
 [Package page](https://www.jsdelivr.com/package/npm/@voltilt/z-timeline) · pin a version in production:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@voltilt/z-timeline@0.1.0/src/style.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@voltilt/z-timeline@0.2.0/src/style.css" />
 <script type="module">
-  import { createZTimeline, createArraySource } from 'https://cdn.jsdelivr.net/npm/@voltilt/z-timeline@0.1.0/+esm';
+  import { createZTimeline, createArraySource } from 'https://cdn.jsdelivr.net/npm/@voltilt/z-timeline@0.2.0/+esm';
 </script>
 ```
 

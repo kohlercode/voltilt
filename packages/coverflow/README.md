@@ -18,9 +18,9 @@ import '@voltilt/coverflow/style.css';
 [Package page](https://www.jsdelivr.com/package/npm/@voltilt/coverflow) · pin a version in production:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@voltilt/coverflow@0.1.0/src/style.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@voltilt/coverflow@0.2.0/src/style.css" />
 <script type="module">
-  import { createCoverflow } from 'https://cdn.jsdelivr.net/npm/@voltilt/coverflow@0.1.0/+esm';
+  import { createCoverflow } from 'https://cdn.jsdelivr.net/npm/@voltilt/coverflow@0.2.0/+esm';
 </script>
 ```
 

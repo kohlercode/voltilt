@@ -8,12 +8,18 @@ GitHub Releases and npm package versions must stay in sync (see [AGENTS.md](./AG
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-10-02
+
 ### Added (`@voltilt/coverflow`)
 
 - Event API: `flow.on` / `flow.off` for `change`, `open`, `dragstart`, `drag`, `dragend`
 - Matching option callbacks: `onChange`, `onOpen`, `onDragStart`, `onDrag`, `onDragEnd`
 - Interactive card content: links, buttons, and `[data-vt-nodrag]` no longer start a drag
 - Demo and README examples use a real `<a>` inside cards
+
+### Notes
+
+- `@voltilt/z-timeline` is published as **0.2.0** to keep package versions aligned (no API changes)
 
 ## [0.1.0] - 2026-09-26
 

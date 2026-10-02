@@ -1,6 +1,6 @@
 {
   "name": "@voltilt/coverflow",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Finger-follow 3D card coverflow — vanilla JS + CSS 3D",
   "type": "module",
   "main": "./src/index.js",

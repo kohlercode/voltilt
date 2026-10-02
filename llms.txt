@@ -3,7 +3,7 @@
 > Voltilt is a set of vanilla JavaScript and CSS 3D navigation primitives: a finger-follow coverflow and a virtualized Z-axis timeline. Both stay smooth with thousands of items because only nearby cards stay in the DOM. No Three.js, no GSAP, no framework.
 
 Voltilt is published by KohlerCode (https://kohlercode.com) as the extracted navigation UI kit of its own client applications.
-Two packages are live on npm: @voltilt/coverflow and @voltilt/z-timeline, both at version 0.1.0, MIT licensed.
+Two packages are live on npm: @voltilt/coverflow and @voltilt/z-timeline, both at version 0.2.0, MIT licensed.
 This demo site is a project page on GitHub Pages, not the API documentation. The package READMEs in the repository are the authority for the API.
 
 ## Facts
@@ -11,7 +11,7 @@ This demo site is a project page on GitHub Pages, not the API documentation. The
 - Project: Voltilt
 - Maintainer: KohlerCode (https://kohlercode.com)
 - Packages: @voltilt/coverflow, @voltilt/z-timeline
-- Version snapshot: 0.1.0 on npm (demo site may be ahead of the published package)
+- Version snapshot: 0.2.0 (verified 2026-10-02)
 - License: MIT
 - Runtime: modern browsers, ES modules, zero dependencies
 - Not required: React, Vue, Svelte, Three.js, GSAP, a bundler
