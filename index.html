@@ -36,7 +36,7 @@
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/voltilt/sitemap.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <script type="application/ld+json">
 {
@@ -130,8 +130,7 @@
       --muted: #9aa3bd;
       --accent: #7b93ff;
       --line: rgba(255, 255, 255, 0.12);
-      --font-display: "Syne", sans-serif;
-      --font-body: "Manrope", sans-serif;
+      --font: "Manrope", sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -141,57 +140,88 @@
       min-height: 100%;
       background: var(--bg);
       color: var(--text);
-      font-family: var(--font-body);
+      font-family: var(--font);
     }
 
     body {
       background:
-        radial-gradient(ellipse 90% 55% at 50% -10%, rgba(70, 96, 180, 0.22), transparent 60%),
-        radial-gradient(ellipse 60% 40% at 100% 30%, rgba(30, 48, 90, 0.35), transparent 55%),
+        radial-gradient(ellipse 70% 50% at 12% 18%, rgba(70, 96, 180, 0.18), transparent 55%),
+        radial-gradient(ellipse 55% 45% at 88% 70%, rgba(30, 48, 90, 0.28), transparent 50%),
         linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
     }
 
     .hero {
       min-height: 100vh;
       min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: clamp(28px, 4vw, 56px);
+      align-items: center;
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      padding: clamp(32px, 5vw, 64px) clamp(20px, 4vw, 40px);
     }
 
     .hero-copy {
-      width: min(720px, 100%);
-      margin: 0 auto;
-      padding: clamp(28px, 5vw, 48px) clamp(20px, 4vw, 40px) 28px;
-      text-align: center;
-      animation: rise 0.7s ease both;
+      animation: rise 0.65s ease both;
     }
 
     h1 {
-      margin: 0 0 14px;
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(2.8rem, 9vw, 4.75rem);
-      letter-spacing: -0.04em;
-      line-height: 0.95;
+      margin: 0 0 16px;
+      font-weight: 500;
+      font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+      letter-spacing: -0.03em;
+      line-height: 1.05;
     }
 
     .lead {
-      margin: 0 auto 28px;
+      margin: 0 0 22px;
       max-width: 34rem;
-      font-size: clamp(1.05rem, 2.4vw, 1.25rem);
-      line-height: 1.5;
+      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+      line-height: 1.55;
       color: var(--muted);
       font-weight: 500;
-      animation: rise 0.7s ease 0.08s both;
+    }
+
+    .install {
+      margin: 0 0 22px;
+      padding: 12px 14px;
+      max-width: 34rem;
+      font-family: ui-monospace, "Cascadia Code", "Segoe UI Mono", monospace;
+      font-size: 0.86rem;
+      line-height: 1.45;
+      color: #c5d0ff;
+      background: rgba(8, 12, 24, 0.65);
+      border: 1px solid var(--line);
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .agent-note {
+      margin: 0 0 28px;
+      max-width: 34rem;
+      font-size: 0.98rem;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .agent-note a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      text-underline-offset: 3px;
+    }
+
+    .agent-note a:hover,
+    .agent-note a:focus-visible {
+      text-decoration: underline;
     }
 
     .cta {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px 18px;
-      justify-content: center;
+      gap: 12px 16px;
       align-items: center;
-      animation: rise 0.7s ease 0.16s both;
     }
 
     .cta a {
@@ -202,7 +232,7 @@
     }
 
     .cta a.primary {
-      padding: 12px 18px;
+      padding: 11px 16px;
       border: 1px solid var(--line);
       background: rgba(123, 147, 255, 0.14);
       transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
@@ -226,28 +256,23 @@
     }
 
     .hero-visual {
-      flex: 1;
-      display: flex;
-      align-items: stretch;
-      min-height: min(48vh, 420px);
-      animation: fade 1s ease 0.2s both;
+      justify-self: end;
+      width: min(100%, 460px);
+      animation: fade 0.9s ease 0.12s both;
     }
 
     .hero-visual img {
       display: block;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      border-top: 1px solid var(--line);
+      height: auto;
+      border: 1px solid var(--line);
     }
 
     footer {
-      padding: 22px clamp(20px, 4vw, 40px) 28px;
+      padding: 0 clamp(20px, 4vw, 40px) 28px;
       text-align: center;
       font-size: 0.85rem;
       color: #6b738a;
-      border-top: 1px solid var(--line);
     }
 
     footer a {
@@ -263,7 +288,7 @@
     }
 
     @keyframes rise {
-      from { opacity: 0; transform: translateY(12px); }
+      from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
@@ -272,10 +297,22 @@
       to { opacity: 1; }
     }
 
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 40px;
+      }
+
+      .hero-visual {
+        justify-self: stretch;
+        width: min(100%, 420px);
+        margin: 0 auto;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .hero-copy,
-      .lead,
-      .cta,
       .hero-visual {
         animation: none;
       }
@@ -290,11 +327,17 @@
     <div class="hero-copy">
       <h1>Voltilt</h1>
       <p class="lead">
-        Finger-follow coverflows and virtualized Z-timelines in vanilla JS and CSS&nbsp;3D — smooth with thousands of cards, no Three.js or GSAP.
+        Drop high-performance CSS&nbsp;3D coverflows and Z-timelines into any app — vanilla JS, no Three.js, no GSAP, smooth with thousands of cards.
+      </p>
+      <p class="install" title="Copy into your project">npm install @voltilt/coverflow @voltilt/z-timeline</p>
+      <p class="agent-note">
+        Building with an AI coding agent?
+        Hand it <a href="https://github.com/kohlercode/voltilt/blob/main/AGENTS.md">AGENTS.md</a>
+        and it already knows how to wire Voltilt into your project.
       </p>
       <div class="cta">
-        <a class="primary" href="examples/coverflow/">Open Coverflow</a>
-        <a class="primary" href="examples/z-timeline/">Open Z-Timeline</a>
+        <a class="primary" href="examples/coverflow/">Try Coverflow</a>
+        <a class="primary" href="examples/z-timeline/">Try Z-Timeline</a>
         <a class="secondary" href="https://github.com/kohlercode/voltilt">GitHub</a>
       </div>
     </div>
@@ -302,8 +345,8 @@
       <img
         src="media/voltilt-coverflow.gif"
         alt="Voltilt coverflow demo: cards rotating through focus in CSS 3D"
-        width="1280"
-        height="720"
+        width="920"
+        height="520"
         decoding="async"
         fetchpriority="high"
       />
