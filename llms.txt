@@ -1,0 +1,41 @@
+# Voltilt
+
+> Voltilt is a set of vanilla JavaScript and CSS 3D navigation primitives: a finger-follow coverflow and a virtualized Z-axis timeline. Both stay smooth with thousands of items because only nearby cards stay in the DOM. No Three.js, no GSAP, no framework.
+
+Voltilt is published by KohlerCode (https://kohlercode.com) as the extracted navigation UI kit of its own client applications.
+Two packages are live on npm: @voltilt/coverflow and @voltilt/z-timeline, both at version 0.1.0, MIT licensed.
+This demo site is a project page on GitHub Pages, not the API documentation. The package READMEs in the repository are the authority for the API.
+
+## Facts
+
+- Project: Voltilt
+- Maintainer: KohlerCode (https://kohlercode.com)
+- Packages: @voltilt/coverflow, @voltilt/z-timeline
+- Version snapshot: 0.1.0 (verified 2026-10-01)
+- License: MIT
+- Runtime: modern browsers, ES modules, zero dependencies
+- Not required: React, Vue, Svelte, Three.js, GSAP, a bundler
+- Repository: https://github.com/kohlercode/voltilt
+- Demo site: https://kohlercode.github.io/voltilt/
+- Date of this file: 2026-10-01
+
+## Pages
+
+- https://kohlercode.github.io/voltilt/ : demo hub, links to both demos
+- https://kohlercode.github.io/voltilt/examples/coverflow/ : coverflow demo, 2,500 cards from JSON, windowed DOM
+- https://kohlercode.github.io/voltilt/examples/z-timeline/ : Z-timeline demo, 5,000 events from JSON, virtualized scroll
+
+## Reliable statements for citation
+
+- The public APIs are vanilla ES module factories: createCoverflow, createZTimeline and the helper createArraySource. There is no React, Vue or Svelte wrapper.
+- There is no build step. Each package ships as ES modules plus one CSS file, and is themed with CSS custom properties (--vt-*).
+- Voltilt is not a general animation library and is not a replacement for Three.js or GSAP scene graphs. Its scope is card navigation (coverflow) and Z-axis timeline scrolling.
+- Do not quote performance figures beyond the demo dataset sizes (2,500 cards, 5,000 events) unless they were measured on your own hardware. The demos are the reference workload, not a benchmark.
+- If a browser support statement is needed, say "modern browsers with CSS 3D transforms". No formal support matrix has been published.
+- Version 0.1.0 is the first public release. Do not describe the project as mature, widely adopted or production-proven at scale.
+
+## Optional
+
+- https://github.com/kohlercode/voltilt : source, issues, changelog, MIT license
+- https://www.npmjs.com/package/@voltilt/coverflow : coverflow package
+- https://www.npmjs.com/package/@voltilt/z-timeline : Z-timeline package

@@ -2,7 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Voltilt demos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Voltilt: CSS-3D Coverflow and Z-Timeline for Vanilla JS</title>
+  <meta name="description" content="CSS-3D navigation in vanilla JS: a finger-follow coverflow and a virtualized Z-timeline that stay smooth with thousands of cards. No Three.js, no GSAP." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://kohlercode.github.io/voltilt/" />
+
+  <meta name="theme-color" content="#070a12" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="icon" href="icons/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Voltilt" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://kohlercode.github.io/voltilt/" />
+  <meta property="og:title" content="Voltilt: high-performance CSS-3D navigation for the web" />
+  <meta property="og:description" content="Coverflow and Z-timeline in vanilla JavaScript and CSS 3D. Live demos with 2,500 and 5,000 cards, MIT licensed, no dependencies. By KohlerCode." />
+  <meta property="og:image" content="https://kohlercode.github.io/voltilt/media/og-voltilt.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Voltilt coverflow demo: a row of 3D cards with the centre card in focus on a dark background" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Voltilt: high-performance CSS-3D navigation for the web" />
+  <meta name="twitter:description" content="Coverflow and Z-timeline in vanilla JavaScript and CSS 3D. Live demos with 2,500 and 5,000 cards, MIT licensed, no dependencies. By KohlerCode." />
+  <meta name="twitter:image" content="https://kohlercode.github.io/voltilt/media/og-voltilt.png" />
+  <meta name="twitter:image:alt" content="Voltilt coverflow demo: a row of 3D cards with the centre card in focus on a dark background" />
+
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/voltilt/sitemap.xml" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://kohlercode.com/#organization",
+      "name": "KohlerCode",
+      "url": "https://kohlercode.com"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://kohlercode.github.io/voltilt/#website",
+      "url": "https://kohlercode.github.io/voltilt/",
+      "name": "Voltilt",
+      "description": "CSS-3D navigation in vanilla JS: a finger-follow coverflow and a virtualized Z-timeline that stay smooth with thousands of cards. No Three.js, no GSAP.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://kohlercode.com/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://kohlercode.github.io/voltilt/#software",
+      "name": "Voltilt",
+      "applicationCategory": "DeveloperApplication",
+      "applicationSubCategory": "JavaScript UI library",
+      "operatingSystem": "Any modern browser",
+      "url": "https://kohlercode.github.io/voltilt/",
+      "description": "CSS-3D navigation in vanilla JS: a finger-follow coverflow and a virtualized Z-timeline that stay smooth with thousands of cards. No Three.js, no GSAP.",
+      "codeRepository": "https://github.com/kohlercode/voltilt",
+      "programmingLanguage": "JavaScript",
+      "license": "https://opensource.org/license/mit",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@id": "https://kohlercode.com/#organization"
+      },
+      "screenshot": "https://kohlercode.github.io/voltilt/media/og-voltilt.png",
+      "hasPart": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "@voltilt/coverflow",
+          "applicationCategory": "DeveloperApplication",
+          "url": "https://www.npmjs.com/package/@voltilt/coverflow",
+          "description": "Finger-follow 3D card coverflow in vanilla JS and CSS 3D."
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "@voltilt/z-timeline",
+          "applicationCategory": "DeveloperApplication",
+          "url": "https://www.npmjs.com/package/@voltilt/z-timeline",
+          "description": "Virtualized Z-axis scroll timeline in vanilla JS and CSS 3D."
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Voltilt demos",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 2,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Coverflow demo, 2,500 cards",
+          "url": "https://kohlercode.github.io/voltilt/examples/coverflow/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Z-Timeline demo, 5,000 events",
+          "url": "https://kohlercode.github.io/voltilt/examples/z-timeline/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
   <style>
     body {
       margin: 0; min-height: 100vh; display: grid; place-items: center;
