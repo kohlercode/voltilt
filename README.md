@@ -27,7 +27,7 @@ A [KohlerCode](https://kohlercode.com) project.
 
 | Package | Status | Description |
 |---------|--------|-------------|
-| [`@voltilt/coverflow`](./packages/coverflow) | Ready | 3D card coverflow (drag, wheel, keyboard, windowed DOM) |
+| [`@voltilt/coverflow`](./packages/coverflow) | Ready | 3D card coverflow (drag, wheel, keyboard, events, windowed DOM) |
 | [`@voltilt/z-timeline`](./packages/z-timeline) | Ready | Virtualized Z-scroll timeline |
 
 ## Quick start

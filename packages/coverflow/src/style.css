@@ -272,8 +272,21 @@
   color: rgba(185, 200, 255, 0.75);
 }
 
+a.vt-card-open-hint {
+  color: rgba(185, 200, 255, 0.9);
+  text-decoration: none;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+a.vt-card-open-hint:hover,
+a.vt-card-open-hint:focus-visible {
+  color: #fff;
+  text-decoration: underline;
+}
+
 .vt-card.is-focus .vt-card-open-hint {
-  display: block;
+  display: inline-block;
 }
 
 @media (prefers-reduced-motion: reduce) {

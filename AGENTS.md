@@ -43,8 +43,13 @@ Import sources in demos via relative paths into `packages/*/src` (no bundler req
 - Factories: `createCoverflow`, `createZTimeline`, helper `createArraySource`
 - Host DOM via element refs **or** `data-vt-*` hooks — never app-specific IDs
 - Lifecycle: `bind` → render/refresh → `destroy`
+- Coverflow events: `flow.on` / `flow.off` (`change`, `open`, `dragstart`, `drag`, `dragend`)
 - Gate input with `isActive()` when embedding in multi-view apps
 - Theme with CSS variables `--vt-*`
+
+## Public clarity
+
+This repo is public. Prefer APIs, demos, and README sections that a newcomer can copy without tribal knowledge. Name events and options plainly; show working links/controls in demos when documenting interaction.
 
 ## Coding norms
 

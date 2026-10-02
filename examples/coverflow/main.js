@@ -26,17 +26,18 @@ const people = await fetch('../data/people-2500.json').then((r) => {
 });
 
 loadingEl.remove();
-statusEl.textContent = `${people.length.toLocaleString()} items loaded`;
 
 const flow = createCoverflow({
   root: document.getElementById('app'),
   titleOf: (p) => p.title,
   metaOf: (p) => p.role,
-  openItem: (p) => toast(`Opened ${p.title}`),
+  // Prefer events (below). openItem still works for simple one-off handlers.
   buildCard(item, { onActivate, isSuppressed, clearSuppress }) {
-    const card = document.createElement('button');
-    card.type = 'button';
+    // Use a <div> (not <button>) so the card can hold a real link.
+    const card = document.createElement('div');
     card.className = 'vt-card';
+    card.setAttribute('role', 'group');
+    card.setAttribute('aria-label', item.title);
     card.innerHTML = `
       <div class="vt-card-face">
         <span class="vt-card-initials">${escapeHtml(item.initials)}</span>
@@ -44,21 +45,35 @@ const flow = createCoverflow({
       <div class="vt-card-body">
         <span class="vt-card-kicker">${escapeHtml(item.role)}</span>
         <h3>${escapeHtml(item.title)}</h3>
-        <span class="vt-card-open-hint">Open details</span>
+        <a class="vt-card-open-hint" href="#person-${escapeHtml(item.id)}">Open details</a>
       </div>
     `;
     card.querySelector('.vt-card-face').style.background =
       `radial-gradient(circle at 35% 30%, hsla(${item.hue}, 70%, 62%, 0.35), transparent 55%),` +
       `linear-gradient(160deg, hsl(${item.hue}, 28%, 22%), #12182a)`;
-    card.addEventListener('click', () => {
+
+    // Card body click → focus or open. Links inside the card keep their own behavior.
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a[href], button, [data-vt-nodrag]')) return;
       if (isSuppressed()) {
         clearSuppress();
         return;
       }
       onActivate(item);
     });
+
     return card;
   },
+});
+
+flow.on('change', ({ index, item }) => {
+  statusEl.textContent = item
+    ? `${people.length.toLocaleString()} items · focus #${index + 1} · ${item.title}`
+    : `${people.length.toLocaleString()} items loaded`;
+});
+
+flow.on('open', ({ item }) => {
+  toast(`Opened ${item.title}`);
 });
 
 flow.bind();

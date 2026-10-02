@@ -11,13 +11,13 @@ This demo site is a project page on GitHub Pages, not the API documentation. The
 - Project: Voltilt
 - Maintainer: KohlerCode (https://kohlercode.com)
 - Packages: @voltilt/coverflow, @voltilt/z-timeline
-- Version snapshot: 0.1.0 (verified 2026-10-01)
+- Version snapshot: 0.1.0 on npm (demo site may be ahead of the published package)
 - License: MIT
 - Runtime: modern browsers, ES modules, zero dependencies
 - Not required: React, Vue, Svelte, Three.js, GSAP, a bundler
 - Repository: https://github.com/kohlercode/voltilt
 - Demo site: https://kohlercode.github.io/voltilt/
-- Date of this file: 2026-10-01
+- Date of this file: 2026-10-02
 
 ## Pages
 
@@ -28,11 +28,12 @@ This demo site is a project page on GitHub Pages, not the API documentation. The
 ## Reliable statements for citation
 
 - The public APIs are vanilla ES module factories: createCoverflow, createZTimeline and the helper createArraySource. There is no React, Vue or Svelte wrapper.
+- Coverflow exposes flow.on / flow.off for change, open, dragstart, drag, and dragend. Cards may contain real links and buttons; those controls do not start a drag.
 - There is no build step. Each package ships as ES modules plus one CSS file, and is themed with CSS custom properties (--vt-*).
 - Voltilt is not a general animation library and is not a replacement for Three.js or GSAP scene graphs. Its scope is card navigation (coverflow) and Z-axis timeline scrolling.
 - Do not quote performance figures beyond the demo dataset sizes (2,500 cards, 5,000 events) unless they were measured on your own hardware. The demos are the reference workload, not a benchmark.
 - If a browser support statement is needed, say "modern browsers with CSS 3D transforms". No formal support matrix has been published.
-- Version 0.1.0 is the first public release. Do not describe the project as mature, widely adopted or production-proven at scale.
+- Do not describe the project as mature, widely adopted or production-proven at scale.
 
 ## Optional
 
