@@ -102,7 +102,6 @@
       background: linear-gradient(to bottom, rgba(7, 10, 18, 0.96) 55%, transparent);
     }
     header h1 { margin: 0; font-size: 1.15rem; font-weight: 700; }
-    header .demo-meta { margin: 0; font-size: 0.85rem; color: #8b95b0; }
     header nav {
       display: flex; align-items: center; gap: 14px;
       font-size: 0.85rem;
@@ -118,7 +117,7 @@
       text-underline-offset: 3px;
     }
     #hud {
-      position: fixed; top: 72px; left: 24px; z-index: 40;
+      position: fixed; top: 56px; left: 24px; z-index: 40;
       font-size: 0.8rem; color: #8b95b0;
       background: rgba(12,16,28,0.75);
       border: 1px solid rgba(255,255,255,0.08);
@@ -127,7 +126,7 @@
       pointer-events: none;
     }
     #jump {
-      position: fixed; top: 72px; right: 24px; z-index: 41;
+      position: fixed; top: 56px; right: 24px; z-index: 41;
       display: flex; gap: 8px;
     }
     #jump button {
@@ -146,10 +145,7 @@
   <div id="loading" class="loading">Loading events-5000.json…</div>
 
   <header>
-    <div>
-      <h1>Voltilt</h1>
-      <p class="demo-meta">@voltilt/z-timeline · 5,000 cards from JSON</p>
-    </div>
+    <h1>Voltilt</h1>
     <nav aria-label="Demo links">
       <a href="https://github.com/kohlercode/voltilt">GitHub</a>
       <a href="../../">Demos</a>

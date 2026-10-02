@@ -52,7 +52,14 @@ const flow = createCoverflow({
       `radial-gradient(circle at 35% 30%, hsla(${item.hue}, 70%, 62%, 0.35), transparent 55%),` +
       `linear-gradient(160deg, hsl(${item.hue}, 28%, 22%), #12182a)`;
 
-    // Card body click → focus or open. Links inside the card keep their own behavior.
+    // Demo stand-in for whatever your app should do on "Open details".
+    card.querySelector('.vt-card-open-hint').addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      toast('Your action here…');
+    });
+
+    // Card body click → focus or open. Links / controls keep their own handlers.
     card.addEventListener('click', (e) => {
       if (e.target.closest('a[href], button, [data-vt-nodrag]')) return;
       if (isSuppressed()) {
@@ -72,8 +79,8 @@ flow.on('change', ({ index, item }) => {
     : `${people.length.toLocaleString()} items loaded`;
 });
 
-flow.on('open', ({ item }) => {
-  toast(`Opened ${item.title}`);
+flow.on('open', () => {
+  toast('Your action here…');
 });
 
 flow.bind();
