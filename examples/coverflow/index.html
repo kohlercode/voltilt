@@ -121,8 +121,16 @@
       font-size: 0.8rem; color: #8b95b0;
       pointer-events: none;
     }
-    /* Keep the drag surface below the header so brand/nav stay clickable */
-    #app { position: fixed; top: 72px; left: 0; right: 0; bottom: 0; }
+    /* Inset below the header. Override package height:100% so top+bottom sizing works. */
+    #app {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: auto;
+      min-height: 0;
+    }
     .toast {
       position: fixed; top: 96px; right: 20px; z-index: 50;
       padding: 10px 14px; border-radius: 10px;
